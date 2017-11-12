@@ -27,16 +27,16 @@
    
 
     <icon src="icon.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="screen.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="screen.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="screen.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="screen.png" />
-    <gap:splash gap:platform="ios" height="480" src="screen.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="screen.png" width="640" />
-    <gap:splash gap:platform="ios" height="1136" src="screen.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="screen.png" width="768" />
-    <gap:splash gap:platform="ios" height="768" src="screen.png" width="1024" />
-    <gap:splash gap:platform="winphone" src="screen.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="screen.jpg" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="screen.jpg" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="screen.jpg" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="screen.jpg" />
+    <gap:splash gap:platform="ios" height="480" src="screen.jpg" width="320" />
+    <gap:splash gap:platform="ios" height="960" src="screen.jpg" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="screen.jpg" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="screen.jpg" width="768" />
+    <gap:splash gap:platform="ios" height="768" src="screen.jpg" width="1024" />
+    <gap:splash gap:platform="winphone" src="screen.jpg" />
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-navigation href="*" />
