@@ -20,10 +20,7 @@
    <plugin name="cordova.plugins.diagnostic" source="npm" />
    <plugin name="cordova-plugin-vibration"  source="npm"/>
    <plugin name="cordova-plugin-file-transfer"  source="npm"/>
-   <plugin name="cordova-plugin-camera"  source="npm"/>
    <plugin name="cordova-plugin-globalization"  source="npm"/>
-   <plugin name="cordova-plugin-device"  source="npm"/>
-   <plugin name="cordova-plugin-file-transfer"  source="npm"/>
    <plugin name="cordova-plugin-insomnia"/>
    
 
