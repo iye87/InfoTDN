@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ahv.shop" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>TDN</name>
+    <description>
+        Aplicaciona informativa del Canal INFOTDN.
+    </description>
+    <author email="iyemartinez1987@gmail.com" href="https://plus.google.com/u/0/+AsielHern%C3%A1ndezValdes">
+        Ing. Isidro Martínez Suárez
+    </author>
+
+   <preference name="AllowInlineMediaPlayback" value="true"/>
+
+   <!--Plugins de IOS-->
+   <plugin name="cordova-plugin-statusbar" source="npm"/>
+   <preference name="StatusBarOverlaysWebView" value="false" />
+   <preference name="StatusBarStyle" value="default" />
+   <!--Plugins de Android-->
+   <plugin name="cordova-plugin-whitelist"  source="npm"/>    
+   <plugin name="cordova-plugin-geolocation" source="npm"/>
+   <plugin name="cordova.plugins.diagnostic" source="npm" />
+   <plugin name="cordova-plugin-vibration"  source="npm"/>
+   <plugin name="cordova-plugin-file-transfer"  source="npm"/>
+   <plugin name="cordova-plugin-camera"  source="npm"/>
+   <plugin name="cordova-plugin-globalization"  source="npm"/>
+   <plugin name="cordova-plugin-device"  source="npm"/>
+   <plugin name="cordova-plugin-insomnia"/>
+   
+
+    <icon src="icon.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="screen.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="screen.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="screen.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="screen.png" />
+    <gap:splash gap:platform="ios" height="480" src="screen.png" width="320" />
+    <gap:splash gap:platform="ios" height="960" src="screen.png" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="screen.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="screen.png" width="768" />
+    <gap:splash gap:platform="ios" height="768" src="screen.png" width="1024" />
+    <gap:splash gap:platform="winphone" src="screen.png" />
+    <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-navigation href="*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

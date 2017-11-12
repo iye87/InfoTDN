@@ -1,0 +1,16 @@
+<ion-view view-title="Noticia">
+    <ion-content>
+            <div class="list card">                 
+                <div class="item item-body">
+                  <h2><b>{{noticia.titulo}}</b></h2>
+                  <p>{{noticia.fecha}}</p>
+                </div>                       
+                <div class="item item-body">
+                  <img class="full-image" src="{{noticia.img}}">
+                  <p align="justify" ng-bind-html="noticia.contenido">                            
+                  </p>
+                </div>
+              </div>    
+            </div>
+    </ion-content>
+  </ion-view>

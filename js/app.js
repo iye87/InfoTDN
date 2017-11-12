@@ -67,6 +67,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.locales', {
+      url: '/locales',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias_locales.html',
+          controller: 'NoticiasLocalesCtrl'
+        }
+      }
+    })
+    .state('app.nacionales', {
+      url: '/nacionales',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias_nacionales.html',
+          controller: 'NoticiasNacionalesCtrl'
+        }
+      }
+    })
+    .state('app.noticia', {
+      url: '/noticias/:noticiaId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticia.html',
+          controller: 'NoticiaCtrl'
+        }
+      }
+    })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -79,3 +106,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/noticias');
 });
+
+function loading(value){
+  if(value){
+    $('#loading').css("display","inline");
+  }else $('#loading').css("display","none");
+}

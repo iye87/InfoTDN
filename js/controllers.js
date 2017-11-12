@@ -51,27 +51,106 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 })
-.controller('NoticiasCtrl', function($scope, $stateParams, $http) {
-
+.controller('NoticiasCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
   $http.get('http://infotdn.com/wp-json/wp/v2/posts').success(function(data) {
-    var noticias = [];
-    
+    var noticias = [];    
     for (var i = 0; i < data.length; i++) {
-      console.log(data[i].better_featured_image.source_url);
       var noticia = {
-        'id': i + 1,
+        'id': data[i].id,
         'titulo': data[i].title.rendered,
         'img': data[i].better_featured_image.source_url,
         'fecha': data[i].date,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered
-      };
-      
+      };      
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
-    pepe = $scope.data_noticias
+    loading(false);
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
+
 })
+.controller('NoticiaCtrl', function($scope, $stateParams, $http) {
+  var id = localStorage.getItem('idnoticia');
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts/'+id).success(function(data) {
+        $scope.noticia = {
+          'titulo': data.title.rendered,
+          'img': data.better_featured_image.source_url,
+          'fecha': data.date,
+          'contenido': data.content.rendered
+        }
+        loading(false);
+});
+})
+.controller('NoticiasLocalesCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=27').success(function(data) {
+    var noticias = [];    
+    for (var i = 0; i < data.length; i++) {
+      var noticia = {
+        'id': data[i].id,
+        'titulo': data[i].title.rendered,
+        'img': data[i].better_featured_image.source_url,
+        'fecha': data[i].date,
+        'contenido': data[i].content.rendered,
+        'fragmento':data[i].excerpt.rendered
+      };      
+      noticias.push(noticia);
+    };
+    $scope.data_noticias = noticias;
+    $scope.hr='<hr/>'
+    loading(false);
+   
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
+
+})
+.controller('NoticiasNacionalesCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=29').success(function(data) {
+    var noticias = [];    
+    for (var i = 0; i < data.length; i++) {
+      var noticia = {
+        'id': data[i].id,
+        'titulo': data[i].title.rendered,
+        'img': data[i].better_featured_image.source_url,
+        'fecha': data[i].date,
+        'contenido': data[i].content.rendered,
+        'fragmento':data[i].excerpt.rendered
+      };      
+      noticias.push(noticia);
+    };
+    $scope.data_noticias = noticias;
+    $scope.hr='<hr/>'
+    loading(false);
+
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
 
 })
 .controller('PlaylistCtrl', function($scope, $stateParams) {
