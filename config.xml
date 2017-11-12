@@ -19,7 +19,6 @@
    <plugin name="cordova-plugin-geolocation" source="npm"/>
    <plugin name="cordova.plugins.diagnostic" source="npm" />
    <plugin name="cordova-plugin-vibration"  source="npm"/>
-   <plugin name="cordova-plugin-file-transfer"  source="npm"/>
    <plugin name="cordova-plugin-globalization"  source="npm"/>
    <plugin name="cordova-plugin-insomnia"/>
    
