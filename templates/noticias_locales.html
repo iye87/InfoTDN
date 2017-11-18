@@ -1,17 +1,21 @@
-<ion-view view-title="Locales">
-        <ion-content>
-                <div class="list card" ng-repeat="data_noticia in data_noticias" ng-click="noticiaClic(data_noticia.id)">                     
-                    <div class="item item-body">
-                      <h2><b>{{data_noticia.titulo}}</b></h2>
-                      <p>November 05, 1955</p>
-                    </div>                       
-                    <div class="item item-body">
-                      <img class="full-image" src="{{data_noticia.img}}">
-                      <p align="justify" ng-bind-html="data_noticia.fragmento">                            
-                      </p>
-                    </div>
-                  </div>    
+      <ion-view view-title="Noticias Locales">
+          <ion-content style="background: aliceblue;"> 
+              <div class="row" ng-repeat="data_noticia in data_noticias" ng-click="noticiaClic(data_noticia.id)">
+                  <div class="col col-67" style="padding-right: 0">
+                      <div class="row" style="color: cornflowerblue; padding-top: 0">
+                        <b>{{data_noticia.categoria}}</b>
+                      </div>
+                      <div class="row">
+                          <b>{{data_noticia.titulo}}</b>
+                      </div>  
+                      <div class="row" style="color: darkgray">
+                            <div class="col col-10"><i class="icon ion-android-calendar"></i></div>
+                            <div class="col"><p style="margin-top: 0">{{data_noticia.fecha}}</p></div>
+                      </div>
+                  </div>
+                  
+                  <div class="col" style="text-align: -webkit-right; padding-left: 0"><img src="{{data_noticia.img}}" style="width: 123.3px; height: 100px; margin-top: 5px;"></div>
+                </hr>
                 </div>
-        </ion-content>
+      </ion-content>
       </ion-view>
-      

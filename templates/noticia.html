@@ -1,16 +1,17 @@
-<ion-view view-title="Noticia">
-    <ion-content>
-            <div class="list card">                 
-                <div class="item item-body">
-                  <h2><b>{{noticia.titulo}}</b></h2>
-                  <p>{{noticia.fecha}}</p>
-                </div>                       
-                <div class="item item-body">
-                  <img class="full-image" src="{{noticia.img}}">
-                  <p align="justify" ng-bind-html="noticia.contenido">                            
-                  </p>
-                </div>
-              </div>    
+<ion-view view-title="Noticia">    
+  <ion-content style="background: aliceblue;">
+    <div class="row" style="background: aliceblue; padding: 0">
+        <div class="col" style="padding: 0"><img class="full-image" src="{{noticia.img}}"></div>
+      </div>            
+      <div class="list card">
+          <div class="item item-body">
+              <h2 style="margin-top: 0;"><b>{{noticia.titulo}}</b></h2>
+              <div class="row">
+                  <div class="col col-10"><i class="icon ion-android-calendar"></i></div>
+                  <div class="col"><p style="margin-top: 0">{{noticia.fecha}}</p></div>
+              </div>
+              <p align="justify" ng-bind-html="noticia.contenido"></p>
             </div>
+      </div>
     </ion-content>
   </ion-view>

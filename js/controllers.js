@@ -53,16 +53,37 @@ angular.module('starter.controllers', [])
 })
 .controller('NoticiasCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
+  $scope.options = {
+    loop: false,
+    effect: 'fade',
+    speed: 500,
+  }
   $http.get('http://infotdn.com/wp-json/wp/v2/posts').success(function(data) {
-    var noticias = [];    
+    var noticias = [];  
+    var categoria = "";  
+    
     for (var i = 0; i < data.length; i++) {
+      
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+      }
+
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
         'img': data[i].better_featured_image.source_url,
         'fecha': data[i].date,
         'contenido': data[i].content.rendered,
-        'fragmento':data[i].excerpt.rendered
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
       };      
       noticias.push(noticia);
     };
@@ -96,16 +117,32 @@ $scope.noticiaClic = function(id){
 .controller('NoticiasLocalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
   $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=27').success(function(data) {
-    var noticias = [];    
+    var noticias = [];  
+    var categoria = "";  
+    
     for (var i = 0; i < data.length; i++) {
+      
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+      }
+
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
         'img': data[i].better_featured_image.source_url,
         'fecha': data[i].date,
         'contenido': data[i].content.rendered,
-        'fragmento':data[i].excerpt.rendered
-      };      
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
+      };    
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
@@ -126,16 +163,32 @@ $scope.noticiaClic = function(id){
 .controller('NoticiasNacionalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
   $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=29').success(function(data) {
-    var noticias = [];    
+    var noticias = [];  
+    var categoria = "";  
+    
     for (var i = 0; i < data.length; i++) {
+      
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+      }
+
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
         'img': data[i].better_featured_image.source_url,
         'fecha': data[i].date,
         'contenido': data[i].content.rendered,
-        'fragmento':data[i].excerpt.rendered
-      };      
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
+      };   
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
@@ -153,5 +206,125 @@ $scope.noticiaClic = function(id){
 }
 
 })
+.controller('NoticiasInternacionalesCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=26').success(function(data) {
+    var noticias = [];  
+    var categoria = "";  
+    
+    for (var i = 0; i < data.length; i++) {
+      
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+      }
+
+      var noticia = {
+        'id': data[i].id,
+        'titulo': data[i].title.rendered,
+        'img': data[i].better_featured_image.source_url,
+        'fecha': data[i].date,
+        'contenido': data[i].content.rendered,
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
+      };   
+      noticias.push(noticia);
+    };
+    $scope.data_noticias = noticias;
+    $scope.hr='<hr/>'
+    loading(false);
+
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
+
+})
+.controller('NoticiasDeportivasCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=25').success(function(data) {
+    var noticias = [];  
+    var categoria = "";  
+    
+    for (var i = 0; i < data.length; i++) {
+      
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+      }
+
+      var noticia = {
+        'id': data[i].id,
+        'titulo': data[i].title.rendered,
+        'img': data[i].better_featured_image.source_url,
+        'fecha': data[i].date,
+        'contenido': data[i].content.rendered,
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
+      };     
+      noticias.push(noticia);
+    };
+    $scope.data_noticias = noticias;
+    $scope.hr='<hr/>'
+    loading(false);
+
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
+
+})
+.controller('TvenVivoCtrl', function($scope, $stateParams) {
+})
+.controller('RadioenVivoCtrl', function($scope, $stateParams) {
+
+$scope.img_pause = true;
+$scope.img_play = false;
+
+$scope.media = new Audio();
+$scope.media.src = "http://radio1.domint.net:8042/;stream.mp3";
+
+$scope.play = function(){
+  $scope.media.load();
+  $scope.media.play();
+  $scope.img_play=true;
+  $scope.img_pause = false;
+}
+
+$scope.pause = function(){
+  $scope.media.pause();
+  $scope.img_pause = true;
+  $scope.img_play = false;  
+}
+
+
+
+})
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
+
+

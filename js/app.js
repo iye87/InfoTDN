@@ -76,12 +76,45 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.nacionales', {
+    .state('app.internacionales', {
+      url: '/internacionales',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias_internacionales.html',
+          controller: 'NoticiasInternacionalesCtrl'
+        }
+      }
+    }).state('app.nacionales', {
       url: '/nacionales',
       views: {
         'menuContent': {
           templateUrl: 'templates/noticias_nacionales.html',
           controller: 'NoticiasNacionalesCtrl'
+        }
+      }
+    }).state('app.tvenvivo', {
+      url: '/tvenvivo',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tv_en_vivo.html',
+          controller: 'TvenVivoCtrl'
+        }
+      }
+    }).state('app.radiovivo', {
+      url: '/radiovivo',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/radio_en_vivo.html',
+          controller: 'RadioenVivoCtrl'
+        }
+      }
+    })
+    .state('app.deportes', {
+      url: '/deportes',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias_deportes.html',
+          controller: 'NoticiasDeportivasCtrl'
         }
       }
     })
@@ -111,4 +144,24 @@ function loading(value){
   if(value){
     $('#loading').css("display","inline");
   }else $('#loading').css("display","none");
+}
+
+/**
+ * Función para calcular el tiempo entre dos fechas.
+ * d1 = "01/17/2012 11:20";
+ * d2 = "01/18/2012 12:25";
+ * calcularTiempoDosFechas(d1, d2);
+ */
+function calcularTiempoDosFechas(date1, date2){
+  start_actual_time = new Date(date1);
+  end_actual_time = new Date(date2);
+
+  var diff = end_actual_time - start_actual_time;
+
+  var diffSeconds = diff/1000;
+  var HH = Math.floor(diffSeconds/3600);
+  var MM = Math.floor(diffSeconds%3600)/60;
+
+  var formatted = ((HH < 10)?("0" + HH):HH) + ":" + ((MM < 10)?("0" + MM):MM)
+  return formatted;
 }

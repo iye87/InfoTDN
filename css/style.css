@@ -18,3 +18,36 @@
   height: 100px;
 }
 /*************EndLoading********************/
+
+.bar.bar-stable {
+  background: cornflowerblue;
+}
+
+.bar-stable .button.button-icon {
+  color: white;
+}
+
+.platform-android .bar .title {
+  font-size: 19px;
+  line-height: 44px;
+  color: white;
+}
+
+.contenido {
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+.row noticias {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  width: 100%;
+}
+
+.item-content {
+  background: aliceblue;
+}
