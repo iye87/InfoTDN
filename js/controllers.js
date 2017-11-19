@@ -127,6 +127,11 @@ $scope.noticiaClic = function(id){
         }
         loading(false);
 });
+
+$scope.compartir = function(contenido,titulo,img){
+  window.plugins.socialsharing.share(contenido, titulo, img);
+}
+
 })
 .controller('NoticiasLocalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
