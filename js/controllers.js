@@ -123,13 +123,14 @@ $scope.noticiaClic = function(id){
           'titulo': data.title.rendered,
           'img': data.better_featured_image.source_url,
           'fecha': fecha,
-          'contenido': data.content.rendered
+          'contenido': data.content.rendered,
+          'link': data.guid.rendered
         }
         loading(false);
 });
 
-$scope.compartir = function(contenido,titulo,img){
-  window.plugins.socialsharing.share(contenido, titulo, img);
+$scope.compartir = function(link){
+  window.plugins.socialsharing.share(null, null, null, link);
 }
 
 })
