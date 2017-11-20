@@ -344,6 +344,12 @@ $scope.noticiaClic = function(id){
 })
 .controller('TvenVivoCtrl', function($scope, $stateParams) {
 })
+.controller('TvTerrenasCtrl', function($scope, $stateParams) {
+})
+.controller('Tv56Ctrl', function($scope, $stateParams) {
+})
+.controller('TvClcCtrl', function($scope, $stateParams) {
+})
 .controller('RadioenVivoCtrl', function($scope, $stateParams) {
 
 $scope.img_pause = true;

@@ -100,6 +100,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'TvenVivoCtrl'
         }
       }
+    }).state('app.tvterrenas', {
+      url: '/tvterrenas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tv_lasterrenas.html',
+          controller: 'TvTerrenasCtrl'
+        }
+      }
+    }).state('app.tv56', {
+      url: '/tv56',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tv_56.html',
+          controller: 'Tv56Ctrl'
+        }
+      }
+    }).state('app.tvclc', {
+      url: '/tvclc',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tv_clc.html',
+          controller: 'TvClcCtrl'
+        }
+      }
     }).state('app.radiovivo', {
       url: '/radiovivo',
       views: {
