@@ -92,6 +92,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'NoticiasNacionalesCtrl'
         }
       }
+    }).state('app.economicas', {
+      url: '/economicas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias_economia.html',
+          controller: 'NoticiasEconomicasCtrl'
+        }
+      }
+    }).state('app.opinion', {
+      url: '/opinion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias_opinion.html',
+          controller: 'NoticiasOpinionCtrl'
+        }
+      }
     }).state('app.tvenvivo', {
       url: '/tvenvivo',
       views: {

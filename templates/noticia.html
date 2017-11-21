@@ -13,6 +13,15 @@
                     <i class="icon ion-android-share-alt"></i></div>
               </div>
               <p align="justify" ng-bind-html="noticia.contenido"></p>
+
+              <p align="right">
+                <a class="subdued">{{cant_comentarios}} Comentarios</a>
+              </p>
+              <br>
+              <div ng-repeat="data_comentario in data_comentarios" style="background: lavender; padding: 10px; border-radius: 10px; margin-top: 0">
+                <p><b>{{data_comentario.autor}}</b></p>
+                <p ng-bind-html="data_comentario.contenido"></p>
+              </div>
             </div>
       </div>
     </ion-content>

@@ -80,6 +80,10 @@ angular.module('starter.controllers', [])
         break;
         case 25: categoria = "Deportes"
         break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
+        break;
       }
 
       var noticia = {
@@ -111,7 +115,7 @@ $scope.noticiaClic = function(id){
   var id = localStorage.getItem('idnoticia');var fecha = "";
   var fecha = "";
   var MONTH_NAMES = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
-
+  var comentarios = [];
   loading(true);
   $http.get('http://infotdn.com/wp-json/wp/v2/posts/'+id).success(function(data) {
 
@@ -127,6 +131,26 @@ $scope.noticiaClic = function(id){
           'link': data.guid.rendered
         }
         loading(false);
+});
+
+$http.get('http://infotdn.com/wp-json/wp/v2/comments?post='+id).success(function(data) {
+  $scope.cant_comentarios = data.length;
+
+  for (var i = 0; i < data.length; i++) {
+    fecha = data[i].date.replace("T", "-");
+    fecha = fecha.split("-", 3);    
+    fecha = fecha[2] + " " + MONTH_NAMES[fecha[1]-1] + " " + fecha[0];
+
+    var comentario = {
+      'autor': data[i].author_name,
+      'fecha': fecha,
+      'contenido': data[i].content.rendered
+    };    
+
+    comentarios.push(comentario);
+  };
+  $scope.data_comentarios = comentarios;
+  
 });
 
 $scope.compartir = function(link){
@@ -157,6 +181,10 @@ $scope.compartir = function(link){
         case 26: categoria = "Internacionales"
         break;
         case 25: categoria = "Deportes"
+        break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
         break;
       }
 
@@ -210,6 +238,10 @@ $scope.noticiaClic = function(id){
         break;
         case 25: categoria = "Deportes"
         break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
+        break;
       }
 
       var noticia = {
@@ -262,6 +294,10 @@ $scope.noticiaClic = function(id){
         break;
         case 25: categoria = "Deportes"
         break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
+        break;
       }
 
       var noticia = {
@@ -313,6 +349,122 @@ $scope.noticiaClic = function(id){
         case 26: categoria = "Internacionales"
         break;
         case 25: categoria = "Deportes"
+        break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
+        break;
+      }
+
+      var noticia = {
+        'id': data[i].id,
+        'titulo': data[i].title.rendered,
+        'img': data[i].better_featured_image.source_url,
+        'fecha': fecha,
+        'contenido': data[i].content.rendered,
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
+      };       
+      noticias.push(noticia);
+    };
+    $scope.data_noticias = noticias;
+    $scope.hr='<hr/>'
+    loading(false);
+
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
+
+})
+.controller('NoticiasEconomicasCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=28&per_page=50').success(function(data) {
+    var noticias = [];  
+    var categoria = "";  
+    var fecha = "";
+    var MONTH_NAMES = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+    for (var i = 0; i < data.length; i++) {
+      fecha = data[i].date.replace("T", "-");
+      fecha = fecha.split("-", 3);
+      
+      fecha = fecha[2] + " " + MONTH_NAMES[fecha[1]-1] + " " + fecha[0];
+
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
+        break;
+      }
+
+      var noticia = {
+        'id': data[i].id,
+        'titulo': data[i].title.rendered,
+        'img': data[i].better_featured_image.source_url,
+        'fecha': fecha,
+        'contenido': data[i].content.rendered,
+        'fragmento':data[i].excerpt.rendered,
+        'categoria':categoria
+      };       
+      noticias.push(noticia);
+    };
+    $scope.data_noticias = noticias;
+    $scope.hr='<hr/>'
+    loading(false);
+
+}).error(function(){
+  alert("Error de Conexión");
+loading(false);
+});
+
+$scope.noticiaClic = function(id){      
+  $location.path('app/noticias/'+id);
+  localStorage.setItem('idnoticia', id);  
+}
+
+})
+.controller('NoticiasOpinionCtrl', function($scope, $stateParams, $http, $location) {
+  loading(true);
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=19&per_page=50').success(function(data) {
+    var noticias = [];  
+    var categoria = "";  
+    var fecha = "";
+    var MONTH_NAMES = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+    for (var i = 0; i < data.length; i++) {
+      fecha = data[i].date.replace("T", "-");
+      fecha = fecha.split("-", 3);
+      
+      fecha = fecha[2] + " " + MONTH_NAMES[fecha[1]-1] + " " + fecha[0];
+
+
+      switch(data[i].categories[0]){
+        case 27: categoria = "Locales"
+        break;
+        case 29: categoria = "Nacionales"
+        break;
+        case 26: categoria = "Internacionales"
+        break;
+        case 25: categoria = "Deportes"
+        break;
+        case 19: categoria = "Opinion"
+        break;
+        case 28: categoria = "Economía"
         break;
       }
 
