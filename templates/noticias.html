@@ -1,5 +1,49 @@
 <ion-view view-title="Noticias">
     <ion-content style="background: aliceblue;"> 
+        <div class="row"> 
+            <div class="col">
+                <div class="card">
+                    <div class="item" style="padding: 1px;">
+                            <img class="full-image" src="img/ciber.jpg">
+                    </div>
+                    <div class="item item-text-wrap">
+                            <i class="icon ion-android-desktop"></i> Ciber Vision
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                    <div class="card">
+                        <div class="item" style="padding: 1px;">
+                                <img class="full-image" src="img/56.jpg">
+                        </div>
+                        <div class="item item-text-wrap">
+                                <i class="icon ion-android-desktop"></i> Somos56
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="row"> 
+                <div class="col">
+                    <div class="card">
+                        <div class="item" style="padding: 1px;">
+                                <img class="full-image" src="img/hoteles.jpg">
+                        </div>
+                        <div class="item item-text-wrap">
+                                <i class="icon ion-android-desktop"></i> CLC
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                        <div class="card">
+                            <div class="item" style="padding: 1px;">
+                                    <img class="full-image" src="img/terrenas.jpg">
+                            </div>
+                            <div class="item item-text-wrap">
+                                    <i class="icon ion-android-desktop"></i> Las Terrenas
+                            </div>
+                        </div>
+                </div>
+        </div>
         <div class="row" ng-repeat="data_noticia in data_noticias" ng-click="noticiaClic(data_noticia.id)">
                 <div class="col col-67" style="padding-right: 0">
                     <div class="row" style="color: cornflowerblue; padding-top: 0">
