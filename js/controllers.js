@@ -76,11 +76,29 @@ angular.module('starter.controllers', [])
     speed: 500,
   }
 
+  $scope.Canal56 = function(){
+    var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
+
   $scope.canales = function(canal){
     switch(canal){
       case 1: $location.path('app/tvenvivo')
       break;
-      case 2: $location.path('app/tv56')
+      case 2: Canal56()
       break;
       case 3: $location.path('app/tvclc')
       break;
