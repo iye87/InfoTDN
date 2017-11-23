@@ -9,6 +9,23 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  $scope.Canal56 = function(){
+    var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -518,21 +535,6 @@ $scope.noticiaClic = function(id){
 .controller('TvTerrenasCtrl', function($scope, $stateParams) {
 })
 .controller('Tv56Ctrl', function($scope, $stateParams) {
-  var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
-  
-    // Just play a video
-    window.plugins.streamingMedia.playVideo(videoUrl);
-    
-    // Play a video with callbacks
-    var options = {
-      successCallback: function() {
-        console.log("Video was closed without error.");
-      },
-      errorCallback: function(errMsg) {
-        console.log("Error! " + errMsg);
-      }
-    };
-    window.plugins.streamingMedia.playVideo(videoUrl, options);
 })
 .controller('TvClcCtrl', function($scope, $stateParams) {
 })
