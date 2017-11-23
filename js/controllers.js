@@ -58,7 +58,26 @@ angular.module('starter.controllers', [])
     effect: 'fade',
     speed: 500,
   }
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts/?per_page=50').success(function(data) {
+
+  $scope.canales = function(canal){
+    switch(canal){
+      case 1: $location.path('app/tvenvivo')
+      break;
+      case 2: $location.path('app/tv56')
+      break;
+      case 3: $location.path('app/tvclc')
+      break;
+      case 4: $location.path('app/tvterrenas')
+      break;
+      case 5: $location.path('app/tvenvivo')
+      break;
+      case 6: $location.path('app/tvenvivo')
+      break;
+
+    }
+  }
+
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts/?per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -160,7 +179,7 @@ $scope.compartir = function(link){
 })
 .controller('NoticiasLocalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=27&per_page=50').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=27&per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -216,7 +235,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasNacionalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=29&per_page=50').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=29&per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -272,7 +291,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasInternacionalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=26&per_page=50').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=26&per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -328,7 +347,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasDeportivasCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=25&per_page=50').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=25&per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -384,7 +403,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasEconomicasCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=28&per_page=50').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=28&per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -440,7 +459,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasOpinionCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=19&per_page=50').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=19&per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -499,6 +518,21 @@ $scope.noticiaClic = function(id){
 .controller('TvTerrenasCtrl', function($scope, $stateParams) {
 })
 .controller('Tv56Ctrl', function($scope, $stateParams) {
+  var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
+  
+    // Just play a video
+    window.plugins.streamingMedia.playVideo(videoUrl);
+    
+    // Play a video with callbacks
+    var options = {
+      successCallback: function() {
+        console.log("Video was closed without error.");
+      },
+      errorCallback: function(errMsg) {
+        console.log("Error! " + errMsg);
+      }
+    };
+    window.plugins.streamingMedia.playVideo(videoUrl, options);
 })
 .controller('TvClcCtrl', function($scope, $stateParams) {
 })
