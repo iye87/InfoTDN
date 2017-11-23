@@ -86,9 +86,7 @@ angular.module('starter.controllers', [])
       break;
       case 4: $location.path('app/tvterrenas')
       break;
-      case 5: $location.path('app/tvenvivo')
-      break;
-      case 6: $location.path('app/tvenvivo')
+      case 5: $location.path('app/radiovivo')
       break;
 
     }
