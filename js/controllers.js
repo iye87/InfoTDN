@@ -160,7 +160,7 @@ angular.module('starter.controllers', [])
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
 
-  /*$scope.canales = function(canal){
+  $scope.canales = function(canal){
     switch(canal){
       case 1: civerVision();
       break;
@@ -176,7 +176,7 @@ angular.module('starter.controllers', [])
     }
   }
 
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts/?per_page=30').success(function(data) {
+  /*$http.get('http://infotdn.com/wp-json/wp/v2/posts/?per_page=30').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
