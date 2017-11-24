@@ -8,7 +8,11 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
+  $scope.options = {
+    loop: false,
+    effect: 'fade',
+    speed: 500,
+  }
   $scope.Canal56 = function(){
     var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
     
@@ -26,7 +30,7 @@ angular.module('starter.controllers', [])
       };
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
-  $scope.civerVision = function(){
+ $scope.civerVision = function(){
     var videoUrl = "http://ss6.domint.net:2078/ctv_str/cibervision/playlist.m3u8";
     
       // Just play a video
