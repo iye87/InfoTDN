@@ -8,11 +8,6 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  $scope.options = {
-    loop: false,
-    effect: 'fade',
-    speed: 500,
-  }
   $scope.Canal56 = function(){
     var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
     
@@ -107,7 +102,7 @@ angular.module('starter.controllers', [])
   ];
 })
 .controller('NoticiasCtrl', function($scope, $stateParams, $http, $location) {
-  loading(true);
+  //loading(true);
   $scope.options = {
     loop: false,
     effect: 'fade',
@@ -165,7 +160,7 @@ angular.module('starter.controllers', [])
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
 
-  $scope.canales = function(canal){
+  /*$scope.canales = function(canal){
     switch(canal){
       case 1: civerVision();
       break;
@@ -231,7 +226,7 @@ loading(false);
 $scope.noticiaClic = function(id){      
   $location.path('app/noticias/'+id);
   localStorage.setItem('idnoticia', id);  
-}
+}*/
 
 })
 .controller('NoticiaCtrl', function($scope, $stateParams, $http) {
