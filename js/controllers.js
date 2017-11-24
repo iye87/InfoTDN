@@ -26,6 +26,40 @@ angular.module('starter.controllers', [])
       };
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
+  $scope.civerVision = function(){
+    var videoUrl = "http://ss6.domint.net:2078/ctv_str/cibervision/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
+  $scope.clc = function(){
+    var videoUrl = "http://qs1.distream.net:2184/clc_str//caribbeantv/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -75,8 +109,41 @@ angular.module('starter.controllers', [])
     effect: 'fade',
     speed: 500,
   }
-
-  $scope.Canal56 = function(){
+  function civerVision(){
+    var videoUrl = "http://ss6.domint.net:2078/ctv_str/cibervision/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
+  function clc(){
+    var videoUrl = "http://qs1.distream.net:2184/clc_str//caribbeantv/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
+  function Canal56 (){
     var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
     
       // Just play a video
@@ -96,11 +163,11 @@ angular.module('starter.controllers', [])
 
   $scope.canales = function(canal){
     switch(canal){
-      case 1: $location.path('app/tvenvivo')
+      case 1: civerVision();
       break;
-      case 2: Canal56()
+      case 2: Canal56();
       break;
-      case 3: $location.path('app/tvclc')
+      case 3: clc();
       break;
       case 4: $location.path('app/tvterrenas')
       break;
