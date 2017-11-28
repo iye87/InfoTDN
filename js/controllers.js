@@ -8,6 +8,23 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.tvtlasterrenas = function(){
+    var videoUrl = "http://ss8.domint.net:2108/tvt_str/tvtlasterrenas/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
   $scope.Canal56 = function(){
     var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
     
@@ -159,6 +176,23 @@ angular.module('starter.controllers', [])
       };
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
+  function tvtlasterrenas(){
+    var videoUrl = "http://ss8.domint.net:2108/tvt_str/tvtlasterrenas/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
 
   $scope.canales = function(canal){
     switch(canal){
@@ -168,7 +202,7 @@ angular.module('starter.controllers', [])
       break;
       case 3: clc();
       break;
-      case 4: $location.path('app/tvterrenas')
+      case 4: tvtlasterrenas();
       break;
       case 5: $location.path('app/radiovivo')
       break;
@@ -270,7 +304,7 @@ $http.get('http://infotdn.com/wp-json/wp/v2/comments?post='+id).success(function
   $scope.data_comentarios = comentarios;
   
 });
-
+//Compratir la noticia
 $scope.compartir = function(link){
   window.plugins.socialsharing.share(null, null, null, link);
 }
@@ -278,7 +312,7 @@ $scope.compartir = function(link){
 })
 .controller('NoticiasLocalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=27&per_page=30').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=27&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -334,7 +368,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasNacionalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=29&per_page=30').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=29&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -390,7 +424,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasInternacionalesCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=26&per_page=30').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=26&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -446,7 +480,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasDeportivasCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=25&per_page=30').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=25&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -494,6 +528,8 @@ $scope.noticiaClic = function(id){
 loading(false);
 });
 
+
+
 $scope.noticiaClic = function(id){      
   $location.path('app/noticias/'+id);
   localStorage.setItem('idnoticia', id);  
@@ -502,7 +538,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasEconomicasCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=28&per_page=30').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=28&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
@@ -558,7 +594,7 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasOpinionCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
-  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=19&per_page=30').success(function(data) {
+  $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=19&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
     var fecha = "";
