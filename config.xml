@@ -8,25 +8,36 @@
         Ing. Isidro Martínez Suárez
     </author>
 
-   <preference name="AllowInlineMediaPlayback" value="true"/>
+    <preference name="AllowInlineMediaPlayback" value="true"/>
 
-   <!--Plugins de IOS-->
-   <plugin name="cordova-plugin-statusbar" source="npm"/>
-   <preference name="StatusBarOverlaysWebView" value="false" />
-   <preference name="StatusBarStyle" value="default" />
-   <preference name="SplashScreenDelay" value="10000"/>
-   <preference name="ShowSplashScreenSpinner" value="false"/>
-   <!--Plugins de Android-->
-   <plugin name="cordova-plugin-whitelist"  source="npm"/>    
-   <plugin name="cordova-plugin-geolocation" source="npm"/>
-   <plugin name="cordova.plugins.diagnostic" source="npm" />
-   <plugin name="cordova-plugin-vibration"  source="npm"/>
-   <plugin name="cordova-plugin-globalization"  source="npm"/>
-   <plugin name="cordova-plugin-x-socialsharing" source="npm" />
-   <plugin name="cordova-plugin-streaming-media" source="npm" />
-   <plugin name="cordova-plugin-splashscreen" source="npm" />
-   <plugin name="cordova-plugin-insomnia"/>
-   
+    <!--Plugins de IOS-->
+    <plugin name="cordova-plugin-statusbar" source="npm"/>
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="SplashScreenDelay" value="10000"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <!-- Requires cli-6.4.0 but we recommend using the latest version. -->
+    <preference name="phonegap-version" value="cli-7.0.1" />
+
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="android-minSdkVersion" value="15" />
+
+    <!-- Can omit if not targetting Windows Phone -->
+    <preference name="windows-appx-target" value="8.1-phone" />
+    <preference name="WindowsToastCapable" value="true" />
+
+    <!--Plugins de Android-->
+    <plugin name="cordova-plugin-whitelist"  source="npm"/>    
+    <plugin name="cordova-plugin-geolocation" source="npm"/>
+    <plugin name="cordova.plugins.diagnostic" source="npm" />
+    <plugin name="cordova-plugin-vibration"  source="npm"/>
+    <plugin name="cordova-plugin-globalization"  source="npm"/>
+    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    <plugin name="cordova-plugin-streaming-media" source="npm" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" />
+    <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
+    <plugin name="cordova-plugin-insomnia"/>
+
 
     <icon src="icon.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="img/screen/android/android1.png" />
@@ -50,3 +61,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
+
+
+
+
