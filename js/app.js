@@ -218,7 +218,7 @@ document.addEventListener('deviceready', function () {
   };
 
   window.plugins.OneSignal
-    .startInit("386ee07f-b554-45c8-a24b-97dc580555aa")
+    .startInit("386ee07f-b554-45c8-a24b-97dc580555aa", {googleProjectNumber: "686642446111"})
     .handleNotificationOpened(notificationOpenedCallback)
     .endInit();
   
