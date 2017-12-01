@@ -14,8 +14,8 @@
    <plugin name="cordova-plugin-statusbar" source="npm"/>
    <preference name="StatusBarOverlaysWebView" value="false" />
    <preference name="StatusBarStyle" value="default" />
-   <preference name="SplashScreenDelay" value="10000">
-   <preference name="ShowSplashScreenSpinner" value="false">
+   <preference name="SplashScreenDelay" value="10000"/>
+   <preference name="ShowSplashScreenSpinner" value="false"/>
    <!--Plugins de Android-->
    <plugin name="cordova-plugin-whitelist"  source="npm"/>    
    <plugin name="cordova-plugin-geolocation" source="npm"/>
