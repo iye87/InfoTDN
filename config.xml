@@ -14,6 +14,8 @@
    <plugin name="cordova-plugin-statusbar" source="npm"/>
    <preference name="StatusBarOverlaysWebView" value="false" />
    <preference name="StatusBarStyle" value="default" />
+   <preference name="SplashScreenDelay" value="10000">
+   <preference name="ShowSplashScreenSpinner" value="false">
    <!--Plugins de Android-->
    <plugin name="cordova-plugin-whitelist"  source="npm"/>    
    <plugin name="cordova-plugin-geolocation" source="npm"/>
@@ -22,19 +24,20 @@
    <plugin name="cordova-plugin-globalization"  source="npm"/>
    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
    <plugin name="cordova-plugin-streaming-media" source="npm" />
+   <plugin name="cordova-plugin-splashscreen" source="npm" />
    <plugin name="cordova-plugin-insomnia"/>
    
 
     <icon src="icon.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="screen.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="screen.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="screen.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="screen.png" />
-    <gap:splash gap:platform="ios" height="480" src="screen.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="screen.png" width="640" />
-    <gap:splash gap:platform="ios" height="1136" src="screen.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="screen.png" width="768" />
-    <gap:splash gap:platform="ios" height="768" src="screen.png" width="1024" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="img/screen/android/android1.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="img/screen/android/android2.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="img/screen/android/android3.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="img/screen/android/android4.png" />
+    <gap:splash gap:platform="ios" height="480" src="img/screen/ios/ios1.png" width="320" />
+    <gap:splash gap:platform="ios" height="960" src="img/screen/ios/ios2.png" width="640" />
+    <gap:splash gap:platform="ios" height="1136" src="img/screen/ios/ios3.png" width="640" />
+    <gap:splash gap:platform="ios" height="1024" src="img/screen/ios/ios7.png" width="768" />
+    <gap:splash gap:platform="ios" height="768" src="img/screen/ios/ios8.png" width="1024" />
     <gap:splash gap:platform="winphone" src="screen.png" />
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
