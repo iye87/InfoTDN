@@ -186,6 +186,7 @@ function loading(value){
   }else $('#loading').css("display","none");
 }
 
+
 /**
  * Función para calcular el tiempo entre dos fechas.
  * d1 = "01/17/2012 11:20";

@@ -119,6 +119,20 @@ angular.module('starter.controllers', [])
   ];
 })
 .controller('NoticiasCtrl', function($scope, $stateParams, $http, $location) {
+  
+  $http.get('http://api.digidev.do/gas/rates.json').success(function(data) {
+
+            $scope.tabla_combstible = {
+              'GasolinaPremium': data.gasoline.premium,
+              'GasolinaRegular': data.gasoline.regular,
+              'GasoilOptimo': data.gasoil.premium,
+              'GasoilRegular': data.gasoil.regular,
+              'Kerosene': data.gas.kerosene,
+              'gaslicuado': data.gas.glp,
+              'gnv': data.gas.gnv
+            }
+    });
+
   //loading(true);
   $scope.options = {
     loop: false,

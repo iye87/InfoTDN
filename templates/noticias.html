@@ -1,41 +1,81 @@
-<ion-view view-title="Noticias">
+<ion-view view-title="Inicio">
     <ion-content style="background: aliceblue;"> 
-        <div class="row">
-                <div class="col">
-                        <div class="item" style="padding: 1px; text-align: center"><i class="icon ion-android-desktop"></i><b> Medios TDN</b></div>
+        <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+                        TV en Vivo
                 </div>
-        </div>
-        <div class="row"> 
-            <div class="col" ng-click="canales(1)">
-                    <div class="item" style="padding: 1px;">
-                            <img class="full-image" src="img/ciber.png">
-                    </div>
-            </div>
-            <div class="col" ng-click="canales(2)">
-                        <div class="item" style="padding: 1px;">
-                                <img class="full-image" src="img/56.png">
+                        <div class="row"> 
+                                <div class="col" ng-click="canales(1)">
+                                        <div class="item" style="padding: 1px;">
+                                                <img class="full-image" src="img/ciber.png">
+                                        </div>
+                                </div>
+                                <div class="col" ng-click="canales(2)">
+                                        <div class="item" style="padding: 1px;">
+                                                <img class="full-image" src="img/56.png">
+                                        </div>
+                                </div>
                         </div>
-            </div>
-        </div>
-        <div class="row"> 
-                <div class="col" ng-click="canales(3)">
-                        <div class="item" style="padding: 1px;">
-                                <img class="full-image" src="img/clc.png">
+                        <div class="row"> 
+                                <div class="col" ng-click="canales(3)">
+                                        <div class="item" style="padding: 1px;">
+                                                <img class="full-image" src="img/clc.png">
+                                        </div>
+                                </div>
+                                <div class="col" ng-click="canales(4)">
+                                                <div class="item" style="padding: 1px;">
+                                                        <img class="full-image" src="img/tvt.png">
+                                                </div>
+                                </div>
                         </div>
+                <div class="item item-divider" style="text-align: center;">
+                        Radio en Vivo
                 </div>
-                <div class="col" ng-click="canales(4)">
-                            <div class="item" style="padding: 1px;">
-                                    <img class="full-image" src="img/tvt.png">
-                            </div>
-                </div>
-        </div>
-        <div class="row"> 
-                <div class="col col-50" ng-click="canales(5)">
-                        <div class="item" style="padding: 1px;">
-                                <img class="full-image" src="img/premium.png">
+                
+                <div class="row"> 
+                                <div class="col col-50" ng-click="canales(5)">
+                                        <div class="item" style="padding: 1px;">
+                                                <img class="full-image" src="img/premium.png">
+                                        </div>
+                                </div>
                         </div>
+                <div class="item item-divider" style="text-align: center;">
+                                <i class="ion-android-car"></i> Precios de Combustibles
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right; color: cornflowerblue;" ><b>Combustibles</b></div>
+                        <div class="col" style="    color: cornflowerblue;"><b>Precios</b></div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Gasolina Premium</div>
+                        <div class="col">RD$ {{tabla_combstible.GasolinaPremium}}</div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Gasolina Regular</div>
+                        <div class="col">RD$ {{tabla_combstible.GasolinaRegular}}</div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Gasoil Optimo</div>
+                        <div class="col">RD$ {{tabla_combstible.GasoilOptimo}}</div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Gasoil Regular</div>
+                        <div class="col">RD$ {{tabla_combstible.GasoilRegular}}</div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Kerosene</div>
+                        <div class="col">RD$ {{tabla_combstible.Kerosene}}</div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Gas Licuado de Petróleo (GLP)</div>
+                        <div class="col">RD$ {{tabla_combstible.gaslicuado}}</div>
+                </div>
+                <div class="row">
+                        <div class="col" style="text-align: right;">Gas Natural Vehicular (GNV)</div>
+                        <div class="col">RD$ {{tabla_combstible.gnv}}</div>
                 </div>
         </div>
+        
         <!--<div class="row">
                 <div class="col">
                         <div class="item" style="padding: 1px; text-align: center"><i class="icon ion-earth"></i> <b> INFOTDN Noticias</b></div>
