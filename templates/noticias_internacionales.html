@@ -1,21 +1,41 @@
 <ion-view view-title="Noticias Internacionales">
         <ion-content style="background: aliceblue;"> 
-            <div class="row" ng-repeat="data_noticia in data_noticias" ng-click="noticiaClic(data_noticia.id)">
-                <div class="col col-67" style="padding-right: 0">
-                    <div class="row" style="color: cornflowerblue; padding-top: 0">
-                      <b>{{data_noticia.categoria}}</b>
+                <div ng-repeat="data_noticia in data_noticias" ng-switch="data_noticia.noticia_ampliada" ng-click="noticiaClic(data_noticia.id)">
+                    <div ng-switch-when="1">
+                    <div><img src="{{data_noticia.img}}" style="width: 100%; height: 200px; margin-top: 5px;"></div>
+                    <div>
+                        <div class="row" style="color: cornflowerblue; padding-top: 0">
+                          <b>{{data_noticia.categoria}}</b>
+                        </div>
+                        <div class="row">
+                            <b>{{data_noticia.titulo}}</b>
+                        </div>  
+                        <div class="row" style="color: darkgray">
+                              <div class="col col-10"><i class="icon ion-android-calendar"></i></div>
+                              <div class="col"><p style="margin-top: 0">{{data_noticia.fecha}}</p></div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <b>{{data_noticia.titulo}}</b>
-                    </div>  
-                    <div class="row" style="color: darkgray">
-                          <div class="col col-10"><i class="icon ion-android-calendar"></i></div>
-                          <div class="col"><p style="margin-top: 0">{{data_noticia.fecha}}</p></div>
+                    
+                    
                     </div>
-                </div>
-                
-                <div class="col" style="padding-left: 0"><img src="{{data_noticia.img}}" style="width: 100%; height: 100px; margin-top: 5px;"></div>
-              </hr>
-              </div>
-    </ion-content>
-    </ion-view>
+    
+                    <div class="row" ng-switch-when="0">
+                        <div class="col col-67" style="padding-right: 0">
+                            <div class="row" style="color: cornflowerblue; padding-top: 0">
+                                <b>{{data_noticia.categoria}}</b>
+                            </div>
+                            <div class="row">
+                                <b>{{data_noticia.titulo}}</b>
+                            </div>  
+                            <div class="row" style="color: darkgray">
+                                    <div class="col col-10"><i class="icon ion-android-calendar"></i></div>
+                                    <div class="col"><p style="margin-top: 0">{{data_noticia.fecha}}</p></div>
+                            </div>
+                        </div>
+                        
+                        <div class="col" style="padding-left: 0"><img src="{{data_noticia.img}}" style="width: 100%; height: 100px; margin-top: 5px;"></div>
+                    </div>
+                  </hr>
+                  </div>              
+        </ion-content>
+      </ion-view>

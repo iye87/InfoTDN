@@ -354,6 +354,12 @@ $scope.compartir = function(link){
         break;
       }
 
+      if(i % 5){
+        var noticia_ampliada = 0;
+      }
+      else{
+        var noticia_ampliada = 1;
+      }
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
@@ -361,8 +367,9 @@ $scope.compartir = function(link){
         'fecha': fecha,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered,
-        'categoria':categoria
-      };      
+        'categoria':categoria,
+        'noticia_ampliada':noticia_ampliada
+      };    
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
@@ -410,6 +417,12 @@ $scope.noticiaClic = function(id){
         break;
       }
 
+      if(i % 5){
+        var noticia_ampliada = 0;
+      }
+      else{
+        var noticia_ampliada = 1;
+      }
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
@@ -417,8 +430,9 @@ $scope.noticiaClic = function(id){
         'fecha': fecha,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered,
-        'categoria':categoria
-      };      
+        'categoria':categoria,
+        'noticia_ampliada':noticia_ampliada
+      };    
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
@@ -466,6 +480,12 @@ $scope.noticiaClic = function(id){
         break;
       }
 
+      if(i % 5){
+        var noticia_ampliada = 0;
+      }
+      else{
+        var noticia_ampliada = 1;
+      }
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
@@ -473,8 +493,9 @@ $scope.noticiaClic = function(id){
         'fecha': fecha,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered,
-        'categoria':categoria
-      };      
+        'categoria':categoria,
+        'noticia_ampliada':noticia_ampliada
+      };    
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
@@ -521,7 +542,12 @@ $scope.noticiaClic = function(id){
         case 28: categoria = "Economía"
         break;
       }
-
+      if(i % 5){
+        var noticia_ampliada = 0;
+      }
+      else{
+        var noticia_ampliada = 1;
+      }
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
@@ -529,7 +555,8 @@ $scope.noticiaClic = function(id){
         'fecha': fecha,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered,
-        'categoria':categoria
+        'categoria':categoria,
+        'noticia_ampliada':noticia_ampliada
       };       
       noticias.push(noticia);
     };
@@ -580,6 +607,12 @@ $scope.noticiaClic = function(id){
         break;
       }
 
+      if(i % 5){
+        var noticia_ampliada = 0;
+      }
+      else{
+        var noticia_ampliada = 1;
+      }
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
@@ -587,8 +620,9 @@ $scope.noticiaClic = function(id){
         'fecha': fecha,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered,
-        'categoria':categoria
-      };       
+        'categoria':categoria,
+        'noticia_ampliada':noticia_ampliada
+      };  
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
@@ -636,6 +670,12 @@ $scope.noticiaClic = function(id){
         break;
       }
 
+      if(i % 5){
+        var noticia_ampliada = 0;
+      }
+      else{
+        var noticia_ampliada = 1;
+      }
       var noticia = {
         'id': data[i].id,
         'titulo': data[i].title.rendered,
@@ -643,8 +683,9 @@ $scope.noticiaClic = function(id){
         'fecha': fecha,
         'contenido': data[i].content.rendered,
         'fragmento':data[i].excerpt.rendered,
-        'categoria':categoria
-      };       
+        'categoria':categoria,
+        'noticia_ampliada':noticia_ampliada
+      };  
       noticias.push(noticia);
     };
     $scope.data_noticias = noticias;
