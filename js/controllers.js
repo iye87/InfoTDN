@@ -76,6 +76,23 @@ angular.module('starter.controllers', [])
       };
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
+  $scope.tvcabrera = function(){
+    var videoUrl = "http://qs1.distream.net:2140/ctv_srt/cabreratv/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -207,6 +224,23 @@ angular.module('starter.controllers', [])
       };
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
+  function tvtcabreras(){
+    var videoUrl = "http://qs1.distream.net:2140/ctv_srt/cabreratv/playlist.m3u8";
+    
+      // Just play a video
+      window.plugins.streamingMedia.playVideo(videoUrl);
+      
+      // Play a video with callbacks
+      var options = {
+        successCallback: function() {
+          console.log("Video was closed without error.");
+        },
+        errorCallback: function(errMsg) {
+          console.log("Error! " + errMsg);
+        }
+      };
+      window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
 
   $scope.canales = function(canal){
     switch(canal){
@@ -217,6 +251,8 @@ angular.module('starter.controllers', [])
       case 3: clc();
       break;
       case 4: tvtlasterrenas();
+      break;
+      case 6: tvtcabreras();
       break;
       case 5: $location.path('app/radiovivo')
       break;
