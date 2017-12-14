@@ -227,3 +227,17 @@ document.addEventListener('deviceready', function () {
   // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
   // window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
+
+
+function onDeviceReady() {
+  document.removeEventListener('deviceready', onDeviceReady, false);
+
+  // Set AdMobAds options:
+  admob.setOptions({
+      publisherId:          "ca-app-pub-3923020212258316/1036849382",  // Required
+      interstitialAdId:     "ca-app-pub-3923020212258316/1322245253",  // Optional
+      tappxShare:           0.5                                        // Optional
+  });
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);

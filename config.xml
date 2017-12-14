@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.tdn.canal" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.telecable.tdn" version="2.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>TDN</name>
     <description>
-        Aplicaciona informativa del Canal INFOTDN.
+        Aplicación de INFOTDN.
     </description>
-    <author email="iyemartinez1987@gmail.com" href="https://plus.google.com/u/0/+AsielHern%C3%A1ndezValdes">
+    <author email="iyemartinez1987@gmail.com" href="">
         Ing. Isidro Martínez Suárez
     </author>
 
@@ -37,6 +37,8 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
     <plugin name="cordova-plugin-insomnia"/>
+    <plugin name="phonegap-admob" source="npm"/>
+
 
 
     <icon src="icon.png" />
