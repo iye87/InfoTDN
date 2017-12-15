@@ -37,8 +37,8 @@
     <plugin name="cordova-plugin-streaming-media" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
-    <plugin name="cordova-plugin-insomnia"/>    
-    <plugin name="cordova-plugin-admobpro" source="npm" />
+    <plugin name="cordova-plugin-insomnia"/>
+    <plugin name="com.admob.plugin" version="3.0.0" source="plugins.cordova.io" />
 
 
 

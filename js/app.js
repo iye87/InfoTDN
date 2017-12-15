@@ -228,16 +228,9 @@ document.addEventListener('deviceready', function () {
   // window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
 
+admob.initAdmob("ca-app-pub-3923020212258316/1036849382","ca-app-pub-3923020212258316/1322245253");
 
-function onDeviceReady() {
-  document.removeEventListener('deviceready', onDeviceReady, false);
+document.addEventListener(admob.Event.onInterstitialReceive, this.onInterstitialReceive, false);
+admob.cacheInterstitial();
 
-  // Set AdMobAds options:
-  admob.setOptions({
-      publisherId:          "ca-app-pub-3923020212258316/1036849382",  // Required
-      interstitialAdId:     "ca-app-pub-3923020212258316/1322245253",  // Optional
-      tappxShare:           0.5                                        // Optional
-  });
-}
-
-document.addEventListener("deviceready", onDeviceReady, false);
+admob.showBanner(admob.BannerSize.BANNER, admob.Position.BOTTOM_APP);
