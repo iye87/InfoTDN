@@ -38,7 +38,7 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
     <plugin name="cordova-plugin-insomnia"/>
-    <gap:plugin name="phonegap-admob" source="npm"/>
+    <gap:plugin name="cordova-plugin-admob" source="npm"/>
 
 
 
