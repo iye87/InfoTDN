@@ -36,6 +36,40 @@
                 <img src="img/loading.gif">
             </div>
         </div><!-- /.modal -->
+
+        <script>
+          var admobid = {};
+          if( /(android)/i.test(navigator.userAgent) ) { 
+            admobid = { // for Android
+              banner : "ca-app-pub-3923020212258316/1036849382",
+              interstitial : "ca-app-pub-3923020212258316/1322245253"
+            };
+          } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+            admobid = { // for iOS
+              banner : "ca-app-pub-3923020212258316/1036849382",
+              interstitial : "ca-app-pub-3923020212258316/1322245253"
+            };
+          } else {
+            admobid = { // for Windows Phone
+              banner : "ca-app-pub-3923020212258316/1036849382",
+              interstitial : "ca-app-pub-3923020212258316/1322245253"
+            };
+          }
+          
+          function initApp() {
+              if (AdMob) {
+                  AdMob.createBanner({
+                      adId : admobid.banner,
+                      position : AdMob.AD_POSITION.BOTTOM_CENTER,
+                      autoShow : true
+                  });
+              }
+          }
+          
+          document.addEventListener('deviceready', initApp, false);
+        </script>
+
+
     </ion-nav-view>
   </body>
 </html>
