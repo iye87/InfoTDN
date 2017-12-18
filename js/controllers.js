@@ -615,6 +615,20 @@ $scope.noticiaClic = function(id){
 })
 .controller('NoticiasEconomicasCtrl', function($scope, $stateParams, $http, $location) {
   loading(true);
+  
+  $http.get('http://api.digidev.do/gas/rates.json').success(function(data) {
+    
+                $scope.tabla_combstible = {
+                  'GasolinaPremium': data.gasoline.premium,
+                  'GasolinaRegular': data.gasoline.regular,
+                  'GasoilOptimo': data.gasoil.premium,
+                  'GasoilRegular': data.gasoil.regular,
+                  'Kerosene': data.gas.kerosene,
+                  'gaslicuado': data.gas.glp,
+                  'gnv': data.gas.gnv
+                }
+        });
+
   $http.get('http://infotdn.com/wp-json/wp/v2/posts?categories=28&per_page=15').success(function(data) {
     var noticias = [];  
     var categoria = "";  
