@@ -157,6 +157,7 @@ angular.module('starter.controllers', [])
     speed: 500,
   }
   function civerVision(){
+    interstitial();
     var videoUrl = "http://ss6.domint.net:2078/ctv_str/cibervision/playlist.m3u8";
     
       // Just play a video
@@ -174,6 +175,7 @@ angular.module('starter.controllers', [])
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
   function clc(){
+    interstitial();
     var videoUrl = "http://qs1.distream.net:2184/clc_str//caribbeantv/playlist.m3u8";
     
       // Just play a video
@@ -191,6 +193,7 @@ angular.module('starter.controllers', [])
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
   function Canal56 (){
+    interstitial();
     var videoUrl = "http://ss6.domint.net:2068/stv_str/somostv/playlist.m3u8";
     
       // Just play a video
@@ -208,6 +211,7 @@ angular.module('starter.controllers', [])
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
   function tvtlasterrenas(){
+    interstitial();
     var videoUrl = "http://ss8.domint.net:2108/tvt_str/tvtlasterrenas/playlist.m3u8";
     
       // Just play a video
@@ -225,6 +229,7 @@ angular.module('starter.controllers', [])
       window.plugins.streamingMedia.playVideo(videoUrl, options);
   }
   function tvtcabreras(){
+    interstitial();
     var videoUrl = "http://qs1.distream.net:2140/ctv_srt/cabreratv/playlist.m3u8";
     
       // Just play a video
@@ -614,6 +619,7 @@ $scope.noticiaClic = function(id){
 
 })
 .controller('NoticiasEconomicasCtrl', function($scope, $stateParams, $http, $location) {
+
   loading(true);
   
   $http.get('http://api.digidev.do/gas/rates.json').success(function(data) {
@@ -754,20 +760,12 @@ $scope.noticiaClic = function(id){
 
 })
 .controller('TvenVivoCtrl', function($scope, $stateParams) {
-  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
-    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('TvTerrenasCtrl', function($scope, $stateParams) {
-  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
-    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('Tv56Ctrl', function($scope, $stateParams) {
-  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
-    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('TvClcCtrl', function($scope, $stateParams) {
-  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
-    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('RadioenVivoCtrl', function($scope, $stateParams) {
 

@@ -207,6 +207,11 @@ function calcularTiempoDosFechas(date1, date2){
   return formatted;
 }
 
+function interstitial(){
+  var  interstitial = "ca-app-pub-3923020212258316/1322245253";
+    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
+}
+
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
 
