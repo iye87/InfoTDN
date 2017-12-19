@@ -614,10 +614,6 @@ $scope.noticiaClic = function(id){
 
 })
 .controller('NoticiasEconomicasCtrl', function($scope, $stateParams, $http, $location) {
-  var  interstitial = "ca-app-pub-3923020212258316/1322245253";
-
-  AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
-
   loading(true);
   
   $http.get('http://api.digidev.do/gas/rates.json').success(function(data) {
@@ -758,12 +754,20 @@ $scope.noticiaClic = function(id){
 
 })
 .controller('TvenVivoCtrl', function($scope, $stateParams) {
+  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
+    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('TvTerrenasCtrl', function($scope, $stateParams) {
+  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
+    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('Tv56Ctrl', function($scope, $stateParams) {
+  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
+    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('TvClcCtrl', function($scope, $stateParams) {
+  var  interstitial = "ca-app-pub-3923020212258316/1322245253";  
+    AdMob.prepareInterstitial( {adId:interstitial, autoShow: true});
 })
 .controller('RadioenVivoCtrl', function($scope, $stateParams) {
 
