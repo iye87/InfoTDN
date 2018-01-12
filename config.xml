@@ -15,7 +15,8 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
     <preference name="SplashScreenDelay" value="10000"/>
-    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <preference name="ShowSplashScreenSpinner" value="true"/>
+    <preference name="android-build-tool" value="gradle" /> 
     <!-- Requires cli-6.4.0 but we recommend using the latest version. -->
     <preference name="phonegap-version" value="cli-7.0.1" />
 
@@ -37,20 +38,53 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
     <plugin name="cordova-plugin-insomnia"/>
-    <plugin name="cordova-plugin-admobpro" source="npm"/>
+    <plugin name="com.admob.plugin" version="3.0.0" source="plugins.cordova.io" />
 
 
 
     <icon src="icon.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="img/screen/android/android1.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="img/screen/android/android2.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="img/screen/android/android3.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="img/screen/android/android4.png" />
-    <gap:splash gap:platform="ios" height="480" src="img/screen/ios/ios1.png" width="320" />
-    <gap:splash gap:platform="ios" height="960" src="img/screen/ios/ios2.png" width="640" />
-    <gap:splash gap:platform="ios" height="1136" src="img/screen/ios/ios3.png" width="640" />
-    <gap:splash gap:platform="ios" height="1024" src="img/screen/ios/ios7.png" width="768" />
-    <gap:splash gap:platform="ios" height="768" src="img/screen/ios/ios8.png" width="1024" />
+
+    <platform name="android">
+        <!-- you can use any density that exists in the Android project -->
+        <splash src="img/screen/android/android3.png" density="land-hdpi"/>
+        <splash src="img/screen/android/android1.png" density="land-ldpi"/>
+        <splash src="img/screen/android/android2.png" density="land-mdpi"/>
+        <splash src="img/screen/android/android4.png" density="land-xhdpi"/>
+
+        <splash src="img/screen/android/android3.png" density="port-hdpi"/>
+        <splash src="img/screen/android/android1.png" density="port-ldpi"/>
+        <splash src="img/screen/android/android2.png" density="port-mdpi"/>
+        <splash src="img/screen/android/android4.png" density="port-xhdpi"/>
+    </platform>
+
+    <platform name="ios">
+        <!-- There are two mechanisms for showing launch images.
+        -- Legacy method (supports all devices except iPad Pro 12.9):
+        -- Note: Images are determined by width and height. The following are supported -->
+        <splash src="img/screen/ios/ios1.png" width="320" height="480"/>
+        <splash src="img/screen/ios/ios2.png" width="640" height="960"/>
+        <splash src="img/screen/ios/ios7.png" width="768" height="1024"/>
+        <splash src="img/screen/ios/ios9.png" width="1536" height="2048"/>
+        <splash src="img/screen/ios/ios8.png" width="1024" height="768"/>
+        <splash src="img/screen/ios/ios10.png" width="2048" height="1536"/>
+        <splash src="img/screen/ios/ios3.png" width="640" height="1136"/>
+        <splash src="img/screen/ios/ios4.png" width="750" height="1334"/>
+        <splash src="img/screen/ios/ios5.png" width="1242" height="2208"/>
+        <splash src="img/screen/ios/ios6.png" width="2208" height="1242"/>
+        <!-- Storyboard method (supports all devices):
+        -- Important: If you use the storyboard method, legacy images are 
+        -- copied but ignored.
+        -- Note: images are determined by scale, idiom, and size traits. The following
+        -- are suggested based on current device form factors -->
+        <splash src="img/screen/ios/Default-667h@2x~iphone.png" />
+        <splash src="img/screen/ios/Default-667h@2x~iphone.png" />
+        <splash src="img/screen/ios/Default-667h@2x~iphone.png" />
+        <splash src="img/screen/ios/Default-667h@2x~iphone.png" />
+        <splash src="img/screen/ios/Default-667h@2x~iphone.png" />
+        <splash src="img/screen/ios/Default-667h@2x~iphone.png" />
+
+    </platform>
+
     <gap:splash gap:platform="winphone" src="screen.png" />
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
