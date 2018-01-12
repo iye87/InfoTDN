@@ -186,6 +186,7 @@ function loading(value){
   }else $('#loading').css("display","none");
 }
 
+navigator.splashscreen.show();
 
 /**
  * Función para calcular el tiempo entre dos fechas.
