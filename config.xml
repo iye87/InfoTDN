@@ -40,6 +40,8 @@
     <plugin name="cordova-plugin-insomnia"/>
     <plugin name="com.admob.plugin" version="3.0.0" source="plugins.cordova.io" />
 
+
+
     <icon src="icon.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="img/screen/android/android1.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="img/screen/android/android2.png" />
@@ -62,7 +64,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
-
 
 
 
